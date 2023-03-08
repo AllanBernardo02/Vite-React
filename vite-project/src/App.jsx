@@ -1,15 +1,25 @@
 import React from "react";
-import reactLogo from "./assets/react.svg";
+import {
+  BrowserRouter,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import "./App.css";
+// import Ecommerce from "./Components/Ecommerce";
 import PostForm from "./Components/PostForm";
 import PostList from "./Components/PostList";
 
 function App() {
   return (
     <div className="App">
-      <PostForm />
-      <PostList />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<h1>Welcome to Vite-React</h1>} />
+          <Route path="/home" element={<PostForm />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
